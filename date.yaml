@@ -1,0 +1,16 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: |
+    echo "Current date is: $(date)"
+  displayName: 'Get Date on Linux'
+  condition: eq(variables['Agent.OS'], 'Linux')
+
+- script: |
+    echo "Current date is: %DATE%"
+  displayName: 'Get Date on Windows'
+  condition: eq(variables['Agent.OS'], 'Windows_NT')
