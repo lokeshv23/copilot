@@ -8,6 +8,11 @@ trigger:
 
 pool: OrinPool
 
+parameters:
+  - name: 'MessageId'
+    type: string
+    default: ""
+
 steps:
 - script: |
     echo "Current date is: $(date)"
